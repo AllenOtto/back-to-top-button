@@ -22,6 +22,12 @@ p {
     margin: 1rem;
     text-align: center;
 }
-h1 {
+.center {
     text-align: center;
+}
+.back-to-top {
+    font-size: 3rem;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem
 }
