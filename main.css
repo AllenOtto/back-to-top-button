@@ -26,8 +26,9 @@ p {
     text-align: center;
 }
 .back-to-top {
-    font-size: 3rem;
+    font-size: 2rem;
     position: fixed;
-    right: 2rem;
-    bottom: 2rem
+    right: 3rem;
+    bottom: 2rem;
+    color: #fff;
 }
