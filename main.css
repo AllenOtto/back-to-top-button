@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Roboto Mono', monospace;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     /* background-image: url(images/bg.jpg); */
     background-color: maroon;
