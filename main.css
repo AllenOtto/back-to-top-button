@@ -18,6 +18,9 @@ body {
     width: 70%;
     margin: 0 auto;
 }
+a {
+    transition: all ease .2s;
+}
 p {
     margin: 1rem;
     text-align: center;

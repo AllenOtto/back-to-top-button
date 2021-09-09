@@ -2,7 +2,8 @@ var btt = document.getElementById('back-to-top'),
     body = document.body,
     docElem = document.documentElement,
     offset = 100,
-    scrollPos, docHeight;
+    scrollPos, docHeight,
+    isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 // Calculate the document height
 docHeight = Math.max(body.scrollHeight, body.offsetHeight, docElem.clientHeight, docElem.scrollHeight, docElem.offsetHeight)
@@ -12,15 +13,17 @@ if (docHeight != 'undefined') {
 
 // Add scroll event Listener
 window.addEventListener('scroll', () => {
-    scrollPos = body.scrollTop || docElem.scrollTop
+    scrollPos = docElem.scrollTop || body.scrollTop
 
-    if (scrollPos > offset) {
-        btt.classList.add('visible')
-    } else {
-        btt.classList.remove('visible')
-    }
+    btt.className = (scrollPos > offset) ? 'visible' : ''
 })
 
-btt.addEventListener('click', () => {
-    
+btt.addEventListener('click', ( event ) => {
+    event.preventDefault();
+
+    if (isFirefox) {
+        body.scrollTop = 0
+    } else {
+        docElem.scrollTop = 0
+    }
 })
